@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": "Tobi Kolakareem",
+    "role": "Admin",
+    "email": "tobi.kolakareem@gmail.com",
+    "phone": "+234-803-123-4567",
+    "status": "Active",
+    "address": "12 Adeola Odeku Street, Victoria Island, Lagos, Nigeria",
+    "createdAt": "2022-11-15",
+    "password": "Tobi@123"
+  },
+
+
+  {
+    "id": 2,
+    "name": "Chinedu Okoro",
+    "role": "User",
+    "email": "chinedu.okoro@gmail.com",
+    "phone": "+234-802-234-5678",
+    "status": "Active",
+    "address": "45 Aminu Kano Crescent, Wuse 2, Abuja, Nigeria",
+    "createdAt": "2021-06-10",
+    "password": "Chinedu#456"
+  },
+  {
+    "id": 3,
+    "name": "Aisha Bello",
+    "role": "User",
+    "email": "aisha.bello@gmail.com",
+    "phone": "+234-701-345-6789",
+    "status": "Inactive",
+    "address": "78 Awolowo Road, Ikoyi, Lagos, Nigeria",
+    "createdAt": "2023-02-25",
+    "password": "Aisha$789"
+  },
+  {
+    "id": 4,
+    "name": "Emeka Nwosu",
+    "role": "Viewer",
+    "email": "emeka.nwosu@gmail.com",
+    "phone": "+234-805-456-7890",
+    "status": "Active",
+    "address": "30 Ogui Road, Enugu, Enugu State, Nigeria",
+    "createdAt": "2020-09-05",
+    "password": "Emeka!321"
+  },
+  {
+    "id": 5,
+    "name": "Ngozi Eze",
+    "role": "User",
+    "email": "ngozi.eze@gmail.com",
+    "phone": "+234-809-567-8901",
+    "status": "Pending",
+    "address": "21 Onitsha Road, Owerri, Imo State, Nigeria",
+    "createdAt": "2021-12-01",
+    "password": "Ngozi%654"
+  },
+  {
+    "id": 6,
+    "name": "Kunle Adeyemi",
+    "role": "Viewer",
+    "email": "kunle.adeyemi@gmail.com",
+    "phone": "+234-803-678-9012",
+    "status": "Inactive",
+    "address": "55 Challenge Road, Ibadan, Oyo State, Nigeria",
+    "createdAt": "2022-04-17",
+    "password": "Kunle^987"
+  },
+  {
+    "id": 7,
+    "name": "Fatima Yusuf",
+    "role": "User",
+    "email": "fatima.yusuf@gmail.com",
+    "phone": "+234-806-789-0123",
+    "status": "Active",
+    "address": "10 Zaria Road, Kano, Kano State, Nigeria",
+    "createdAt": "2023-01-12",
+    "password": "Fatima*741"
+  },
+  {
+    "id": 8,
+    "name": "Ifeanyi Ubah",
+    "role": "Viewer",
+    "email": "ifeanyi.ubah@gmail.com",
+    "phone": "+234-802-890-1234",
+    "status": "Pending",
+    "address": "7 Aba Road, Port Harcourt, Rivers State, Nigeria",
+    "createdAt": "2020-10-20",
+    "password": "Ifeanyi&852"
+  },
+  {
+    "id": 9,
+    "name": "Blessing Sunday",
+    "role": "User",
+    "email": "blessing.sunday@gmail.com",
+    "phone": "+234-701-901-2345",
+    "status": "Active",
+    "address": "18 Okumagba Avenue, Warri, Delta State, Nigeria",
+    "createdAt": "2021-08-08",
+    "password": "Blessing(963"
+  },
+  {
+    "id": 10,
+    "name": "Yemi Bamidele",
+    "role": "Viewer",
+    "email": "yemi.bamidele@gmail.com",
+    "phone": "+234-805-012-3456",
+    "status": "Inactive",
+    "address": "34 Osogbo Road, Osogbo, Osun State, Nigeria",
+    "createdAt": "2022-07-03",
+    "password": "Yemi)159"
+  }
+]

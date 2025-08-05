@@ -1,0 +1,41 @@
+.sidebar {
+  width: 250px;
+  background: #fff;
+  border-right: 1px solid #eee;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+
+  &__logo img {
+    max-width: 120px;
+    margin-bottom: 2rem;
+  }
+
+  &__nav ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 1rem; // Increase or decrease as needed
+
+      a {
+        text-decoration: none;
+        color: #213f7d;
+        font-weight: 600;
+
+        &:hover {
+          color: #39cdcc;
+        }
+      }
+    }
+  }
+
+  &__section {
+    margin-top: 1.5rem;
+    margin-bottom: 0.7rem;
+    font-weight: bold;
+    color: #545f7d;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding-left: 0.5rem;
+  }
+}

@@ -1,0 +1,130 @@
+.login {
+  display: flex;
+  min-height: 100vh;
+
+   &__left {
+    flex: 1;
+    background: #f7f9fa;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+    .login__logo {
+      position: absolute;
+      top: 2.5rem;
+      left: 2.5rem;
+      max-width: 160px;
+      width: 160px;
+      height: auto;
+    }
+     .login__illustration {
+      margin-top: 3rem;
+      max-width: 80%;
+      height: 200px;
+      display: block;
+    }
+  }
+
+  &__right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .login__form-container {
+      width: 100%;
+      max-width: 400px;
+
+      h1 {
+        font-size: 2rem;
+        color: #213f7d; 
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        margin-bottom: 2rem;
+        color: #545f7d;
+      }
+
+      .login__form {
+        display: flex;
+        flex-direction: column;
+
+        input {
+          padding: 1rem;
+          border: 1px solid #545f7d33;
+          border-radius: 5px;
+          margin-bottom: 1rem;
+          font-size: 1rem;
+        }
+
+        .login__password {
+  position: relative;
+
+  input {
+    width: 92%;
+  }
+
+  span {
+    position: absolute;
+    right: 1rem;
+    top: 40%; 
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #39cdcc;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+}
+
+        .login__forgot {
+          color: #39cdcc;
+          font-weight: 600;
+          font-size: 0.875rem;
+          margin-bottom: 2rem;
+          text-decoration: none;
+        }
+
+        button {
+          padding: 1rem;
+          background: #39cdcc;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: background 0.3s ease;
+
+          &:hover {
+            background: darken(#39cdcc, 5%);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login {
+    flex-direction: column;
+
+    &__left {
+      display: none;
+    }
+
+    &__right {
+      flex: unset;
+      width: 100%;
+      padding: 2rem;
+    }
+  }
+}
+
+.error {
+  color: red;
+  margin-top: 0.5rem;
+}
