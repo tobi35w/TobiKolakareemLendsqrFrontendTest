@@ -340,6 +340,41 @@
   background: #2bb8b7;
 }
 
+/* Pagination styles */
+.dashboard__pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 2rem 0 0 0;
+  font-size: 0.98rem;
+}
+
+.dashboard__pagination select {
+  font-size: 1rem;
+  margin: 0 0.3rem;
+}
+
+.dashboard__pagination button {
+  background: none;
+  border: 1px solid #e4eaf1;
+  border-radius: 4px;
+  padding: 0.3rem 0.7rem;
+  color: #213f7d;
+  cursor: pointer;
+}
+
+.dashboard__pagination button.active,
+.dashboard__pagination button:hover {
+  background: #39cdcc;
+  color: #fff;
+  border-color: #39cdcc;
+}
+
+.dashboard__pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 /* Responsive */
 @media (max-width: 1100px) {
   .dashboard__stats {

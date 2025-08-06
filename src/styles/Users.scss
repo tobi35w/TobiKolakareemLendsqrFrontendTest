@@ -118,8 +118,14 @@
 }
 
 .status--active { background: #e6fff2; color: #39cd62; }
-.status--inactive { background: #fff3e6; color: #e9b200; }
-.status--pending { background: #e6f7ff; color: #39cdcc; }
+.status--inactive { 
+  background: #f0f0f0;   // light grey background
+  color: #a0a0a0;        // medium grey text
+}
+.status--pending { 
+  background: #fffbe6;   // light yellow background
+  color: #e9b200;        // yellow text
+}
 .status--blacklisted { background: #ffe6e6; color: #e4033b; }
 
 /* Sidebar styles */
@@ -243,21 +249,19 @@
 .filter-panel {
   position: absolute;
   left: 0;
-  top: 2.5rem;
-  background: #fff;
-  box-shadow: 0 8px 32px rgba(33, 63, 125, 0.18);
-  border-radius: 8px;
-  min-width: 320px;
-  width: 320px; // Add this line
+  top: 100%;
   z-index: 20;
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
-  border: 1px solid #f0f0f0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  box-sizing: border-box;
-  max-height: 80vh;
-  overflow-y: auto;
+  min-width: 320px;
+  max-width: 95vw;
+  max-height: 420px;         // Add a max-height
+  overflow-y: auto;          // Make it scrollable if content overflows
+  background: #fff;
+  
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 #00000022;
+  padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+  margin: 0;
+  display: block;
 }
 
 .filter-panel label {
@@ -340,6 +344,42 @@
   background: #2bb8b7;
 }
 
+/* Logout styles */
+.sidebar-logout {
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #ececec;
+  padding: 1.2rem 0 1.5rem 2rem;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.sidebar-logout__btn {
+  background: none;
+  border: none;
+  color: #5a5b5f;
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: left;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 8px;
+  transition: color 0.2s;
+  margin-left: 2px;
+}
+
+.sidebar-logout__btn:hover {
+  color: #e4033b;
+}
+
+.sidebar-logout__version {
+  color: #b0b7c3a8;
+  font-size: 13px;
+  margin-top: 8px;
+  margin-right: 50px;
+}
+
 /* Responsive */
 @media (max-width: 1100px) {
   .dashboard__stats {
@@ -365,5 +405,14 @@
   }
   .dashboard__main {
     margin-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .filter-panel {
+    min-width: 90vw;
+    left: 5vw;
+    transform: none;
+    padding: 1rem 0.5rem;
   }
 }

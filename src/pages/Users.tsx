@@ -4,7 +4,7 @@ import Topbar from '../components/Topbar';
 import '../styles/Users.scss';
 import { useNavigate } from 'react-router-dom';
 
-const Dashboard = () => {
+const Users = () => {
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState('');
   const [menuOpen, setMenuOpen] = useState<number | null>(null);
@@ -19,6 +19,11 @@ const Dashboard = () => {
     phone: '',
     status: ''
   });
+
+  // Pagination state
+  const [usersPerPage, setUsersPerPage] = useState(9);
+  const [currentPage, setCurrentPage] = useState(1);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -55,29 +60,23 @@ const Dashboard = () => {
     setShowFilter(false);
   };
 
-  // Example: users is your array of all users
+  // Filtering
   const filteredUsers = users.filter((user: any) => {
-    // Organization
     if (filters.organization && user.organization?.toLowerCase() !== filters.organization.toLowerCase()) {
       return false;
     }
-    // Username
     if (filters.username && !user.name?.toLowerCase().includes(filters.username.toLowerCase())) {
       return false;
     }
-    // Email
     if (filters.email && !user.email?.toLowerCase().includes(filters.email.toLowerCase())) {
       return false;
     }
-    // Date
     if (filters.date && !user.createdAt?.startsWith(filters.date)) {
       return false;
     }
-    // Phone
     if (filters.phone && !user.phone?.includes(filters.phone)) {
       return false;
     }
-    // Status
     if (filters.status && user.status?.toLowerCase() !== filters.status.toLowerCase()) {
       return false;
     }
@@ -89,12 +88,10 @@ const Dashboard = () => {
       let aValue = a[sortColumn];
       let bValue = b[sortColumn];
 
-      // For date, convert to Date object
       if (sortColumn === 'createdAt') {
         aValue = new Date(aValue);
         bValue = new Date(bValue);
       }
-      // For phone, remove non-numeric characters
       if (sortColumn === 'phone') {
         aValue = aValue.replace(/\D/g, '');
         bValue = bValue.replace(/\D/g, '');
@@ -109,6 +106,15 @@ const Dashboard = () => {
   const handleViewDetails = (userId: number) => {
     navigate(`/user/${userId}`);
   };
+
+  // Pagination logic
+  const totalUsers = filteredUsers.length;
+  const totalPages = Math.ceil(totalUsers / usersPerPage);
+
+  const paginatedUsers = filteredUsers.slice(
+    (currentPage - 1) * usersPerPage,
+    currentPage * usersPerPage
+  );
 
   return (
     <div className="dashboard">
@@ -305,7 +311,7 @@ const Dashboard = () => {
               </tr>
             </thead>
             <tbody>
-              {filteredUsers.map((user: any, idx: number) => (
+              {paginatedUsers.map((user: any, idx: number) => (
                 <tr key={user.id}>
                   <td>Lendsqr</td>
                   <td>{user.name.split(' ')[0]}</td>
@@ -328,7 +334,7 @@ const Dashboard = () => {
                           position: 'absolute',
                           right: 0,
                           // Show upward for last two users, downward for others
-                          ...(idx >= filteredUsers.length - 2
+                          ...(idx >= paginatedUsers.length - 2
                             ? { bottom: '2.5rem', top: 'auto' }
                             : { top: '2.5rem', bottom: 'auto' }),
                           background: '#fff',
@@ -361,10 +367,65 @@ const Dashboard = () => {
               ))}
             </tbody>
           </table>
+          {/* Pagination Controls */}
+          <div className="dashboard__pagination">
+            <span>
+              Showing&nbsp;
+              <select
+                value={usersPerPage}
+                onChange={e => {
+                  setUsersPerPage(Number(e.target.value));
+                  setCurrentPage(1);
+                }}
+              >
+                {[9, 15, 30, 50, 100].map(num => (
+                  <option key={num} value={num}>{num}</option>
+                ))}
+              </select>
+              &nbsp;out of {totalUsers}
+            </span>
+            <button
+              disabled={currentPage === 1}
+              onClick={() => setCurrentPage(currentPage - 1)}
+            >
+              &lt;
+            </button>
+            {/* Pagination numbers with ellipsis */}
+            {Array.from({ length: totalPages }, (_, i) => i + 1)
+              .filter(page =>
+                page === 1 ||
+                page === totalPages ||
+                (page >= currentPage - 1 && page <= currentPage + 1)
+              )
+              .reduce((acc: (number | string)[], page, idx, arr) => {
+                if (idx > 0 && page - (arr[idx - 1] as number) > 1) acc.push('...');
+                acc.push(page);
+                return acc;
+              }, [])
+              .map((page, idx) =>
+                page === '...' ? (
+                  <span key={idx} style={{ padding: '0 6px' }}>...</span>
+                ) : (
+                  <button
+                    key={page}
+                    className={currentPage === page ? "active" : ""}
+                    onClick={() => setCurrentPage(Number(page))}
+                  >
+                    {page}
+                  </button>
+                )
+              )}
+            <button
+              disabled={currentPage === totalPages}
+              onClick={() => setCurrentPage(currentPage + 1)}
+            >
+              &gt;
+            </button>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Dashboard;
+export default Users;

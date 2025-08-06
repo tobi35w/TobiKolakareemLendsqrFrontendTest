@@ -184,12 +184,76 @@ hr {
   background: none;
 }
 
+.user-details__tabs--overlap {
+  position: relative;
+  top: -16px; /* Pulls the tabs up to overlap the card's bottom border */
+  margin-bottom: 2rem;
+  background: #fff;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  border-bottom: 2px solid #e9f6ff;
+  display: flex;
+  gap: 2.5rem;
+  z-index: 2;
+}
+.user-details__tabs--overlap span {
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  color: #545f7d;
+  font-weight: 500;
+  font-size: 1rem;
+  border-bottom: 2px solid transparent;
+  transition: border 0.2s, color 0.2s;
+}
+.user-details__tabs--overlap .active {
+  color: #39cdcc;
+  border-bottom: 2px solid #39cdcc;
+}
+
+.tab-content-container {
+  position: relative;
+  min-height: 220px; // increased height to push tabs further down
+  padding-bottom: 70px; // more space for the tabs at the bottom
+  margin-top: 32px; // slightly more space from the top
+}
+
+.user-details__tabs {
+  border-bottom: none !important; // Remove the tab border
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  gap: 2.5rem;
+  justify-content: flex-start;
+  padding: 0 2.5rem 0.5rem 2.5rem;
+  z-index: 2;
+}
+
+.user-details__tabs span {
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  color: #545f7d;
+  font-weight: 500;
+  font-size: 1rem;
+  border-bottom: 2px solid transparent;
+  transition: border 0.2s, color 0.2s;
+}
+
+.user-details__tabs .active {
+  color: #39cdcc;
+  border-bottom: 2px solid #39cdcc;
+}
+
 .user-details__section {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px #e3e3e3;
   padding: 2rem 2.5rem;
   margin-bottom: 2rem;
+  width: 100%;
+  max-width: 950px;
 }
 
 .user-details__section h4 {
@@ -244,7 +308,7 @@ hr {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .user-details__header h2 {
@@ -259,35 +323,42 @@ hr {
 }
 
 .blacklist-btn {
-  background: #fff;
+  background: #f8f9fa8c;
   color: #e4033b;
-  border: 1px solid #e4033b;
+  border: 1.5px solid #e4033b;
   border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.6rem 1.5rem;
-  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.6em 1.5em;
+  margin-right: 1em;
   transition: background 0.2s, color 0.2s;
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
 }
-
 .blacklist-btn:hover {
-  background: #ffe6eb;
+  background: #ffe6ec83;
 }
 
 .activate-btn {
-  background: #fff;
+  background: #f8f9fa9c;
   color: #39cdcc;
-  border: 1px solid #39cdcc;
+  border: 1.5px solid #39cdcc;
   border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.6rem 1.5rem;
-  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.6em 1.5em;
   transition: background 0.2s, color 0.2s;
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
 }
-
 .activate-btn:hover {
-  background: #e9f6ff;
+  background: #ffe6ec83;
 }
 
 .user-details__summary-tier,
@@ -299,3 +370,78 @@ hr {
 .user-details__tier-stars {
   margin-top: 0;
 }
+
+.user-details__content {
+  margin-left: 220px; // Adjust this value to match your sidebar width/gap
+  max-width: 1100px;
+}
+
+.user-details__content-aligned {
+  margin-left: 1px; // Small gap from sidebar
+  max-width: 950px;  // Set a shared max width for both cards
+}
+
+.summary-container,
+.user-details__section {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  max-width: 950px; // Ensure both have the same width
+  box-sizing: border-box;
+}
+
+.user-details__card--summary,
+.user-details__section {
+  width: 100%;
+  max-width: 950px; // Match width for both
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 24px 0 #0000000a;
+  border-radius: 8px;
+  background: #fff;
+  border: none;
+}
+
+.user-details__outer-container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px 0 #0001;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  margin: 32px 0 0 0;
+  max-width: 1000px;
+  width: 100%;
+  margin-left: 24px; // gap from sidebar, adjust as needed
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.user-details__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.summary-container,
+.user-details__section {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.topbar {
+  border: 1.5px solid #e4eaf1;
+  border-radius: 8px;
+  background: #fff;
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
