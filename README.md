@@ -1,6 +1,6 @@
 # 🏦 Lendsqr Frontend Engineering Assessment
 
-### 👨🏽‍💻 Candidate: Tobiloba  
+### 👨🏽‍💻 Candidate: Kola-Kareem Oladipupo Tobiloba  
 **Live Site:** [https://tobiloba-lendsqr-fe-test.vercel.app](https://tobiloba-lendsqr-fe-test.vercel.app)  
 **GitHub Repo:** [https://github.com/tobi35w/Tobi-Kolakareem-Lendsqr-Frontend-Test\](https://github.com/tobi35w/Tobi-Kolakareem-Lendsqr-Frontend-Test)
 
@@ -12,7 +12,7 @@ This project was built as part of the **Lendsqr Frontend Engineering Assessment*
 The solution includes:
 - A login screen
 - A fully responsive dashboard
-- A users list table (with filtering and search)
+- A user's list table (with filtering and search)
 - A user details view with structured information
 
 All features were implemented using **React**, **TypeScript**, **SCSS**, and a mock API with 500 users.
@@ -98,16 +98,6 @@ Where minor inconsistencies occurred due to missing font files or non-exportable
 - Use a global state manager like `Zustand` or `Redux`
 - Add animations using `Framer Motion`
 - Integrate real API endpoints and secure auth (e.g., JWT)
-
-
-
-## 📹 Video Walkthrough
-
-Loom Video: [https://loom.com/YOUR_VIDEO_LINK](https://loom.com/YOUR_VIDEO_LINK)  
-- Shows all 4 pages
-- Side-by-side Figma comparison
-- Explanation of major decisions
-- My face is visible throughout the video (per instruction)
 
 
 
