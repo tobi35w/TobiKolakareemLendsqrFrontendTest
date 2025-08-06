@@ -2,8 +2,7 @@
 
 ### 👨🏽‍💻 Candidate: Kola-Kareem Oladipupo Tobiloba  
 **Live Site:** [https://tobiloba-lendsqr-fe-test.vercel.app](https://tobiloba-lendsqr-fe-test.vercel.app)  
-**GitHub Repo:** [https://github.com/tobi35w/Tobi-Kolakareem-Lendsqr-Frontend-Test\](https://github.com/tobi35w/Tobi-Kolakareem-Lendsqr-Frontend-Test)
-
+**GitHub Repo:**[ https://github.com/tobi35w/TobiKolakareemLendsqrFrontendTest/](https://github.com/tobi35w/TobiKolakareemLendsqrFrontendTest)]
 
 ## ✨ Overview
 
