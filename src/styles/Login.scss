@@ -1,36 +1,29 @@
 .login {
   display: flex;
   min-height: 100vh;
-  width: 100vw;
-  background: #fff;
 
-  &__left {
+   &__left {
     flex: 1;
-    background: #fff;
+    background: #f7f9fa;
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     padding: 0;
-    min-width: 350px;
 
     .login__logo {
       position: absolute;
-      top: 48px;
-      left: 80px;
+      top: 2.5rem;
+      left: 2.5rem;
+      max-width: 160px;
       width: 160px;
       height: auto;
-      max-width: 160px;
-      z-index: 2;
     }
-    .login__illustration {
-      margin-top: 220px;
-      margin-left: 80px;
-      width: 400px;
-      max-width: 90%;
-      height: auto;
-      margin-top: 300px;
+     .login__illustration {
+      margin-top: 3rem;
+      max-width: 80%;
+      height: 200px;
       display: block;
     }
   }
@@ -39,25 +32,21 @@
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding-left: 80px;
-    background: #fff;
+    justify-content: center;
 
     .login__form-container {
       width: 100%;
       max-width: 400px;
 
       h1 {
-        font-size: 2.5rem;
-        color: #213f7d;
+        font-size: 2rem;
+        color: #213f7d; 
         margin-bottom: 0.5rem;
-        font-weight: 700;
       }
 
       p {
         margin-bottom: 2rem;
         color: #545f7d;
-        font-size: 1.25rem;
       }
 
       .login__form {
@@ -67,50 +56,36 @@
         input {
           padding: 1rem;
           border: 1px solid #545f7d33;
-          border-radius: 4px;
-          margin-bottom: 1.5rem;
+          border-radius: 5px;
+          margin-bottom: 1rem;
           font-size: 1rem;
-          background: #fff;
-          color: #213f7d;
-          transition: border 0.2s;
-          &:focus {
-            border: 1.5px solid #39cdcc;
-          }
         }
 
         .login__password {
-          position: relative;
-          margin-bottom: 1.5rem;
+  position: relative;
 
-          input {
-            width: 92%;
-            margin-bottom: 0;
-          }
+  input {
+    width: 92%;
+  }
 
-          span {
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            color: #39cdcc;
-            font-weight: 600;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-            user-select: none;
-          }
-        }
+  span {
+    position: absolute;
+    right: 1rem;
+    top: 40%; 
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #39cdcc;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+}
 
         .login__forgot {
           color: #39cdcc;
           font-weight: 600;
-          font-size: 0.95rem;
+          font-size: 0.875rem;
           margin-bottom: 2rem;
           text-decoration: none;
-          transition: text-decoration 0.2s;
-          &:hover {
-            text-decoration: underline;
-          }
         }
 
         button {
@@ -118,15 +93,13 @@
           background: #39cdcc;
           color: #fff;
           border: none;
-          border-radius: 8px;
+          border-radius: 5px;
           font-weight: bold;
-          font-size: 1.1rem;
           cursor: pointer;
           transition: background 0.3s ease;
-          letter-spacing: 1px;
 
           &:hover {
-            background: #2bb8b8;
+            background: darken(#39cdcc, 5%);
           }
         }
       }
@@ -135,16 +108,6 @@
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-  .login__left .login__illustration {
-    width: 300px;
-    margin-top: 120px;
-  }
-  .login__right {
-    padding-left: 40px;
-  }
-}
-
 @media (max-width: 768px) {
   .login {
     flex-direction: column;
@@ -156,15 +119,12 @@
     &__right {
       flex: unset;
       width: 100%;
-      padding: 2rem 1rem;
-      justify-content: center;
-      align-items: center;
+      padding: 2rem;
     }
   }
 }
 
 .error {
-  color: #e74c3c;
+  color: red;
   margin-top: 0.5rem;
-  font-size: 0.95rem;
 }
